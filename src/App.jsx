@@ -1,0 +1,46 @@
+import './App.css'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import NFTGallery from './components/NFTGallery'
+import SteamStats from './components/GameStats/SteamStats'
+import FFXIVStats from './components/GameStats/FFXIVStats'
+import WoWStats from './components/GameStats/WoWStats'
+import POE2Stats from './components/GameStats/POE2Stats'
+import NikkeStats from './components/GameStats/NikkeStats'
+import Footer from './components/Footer'
+
+function App() {
+  return (
+    <div className="app">
+      <Header />
+      <main>
+        <Hero />
+
+        <section id="nfts" className="section">
+          <div className="section__container">
+            <h2 className="section__title">NFT Collection</h2>
+            <p className="section__subtitle">My Ethereum NFT holdings</p>
+            <NFTGallery />
+          </div>
+        </section>
+
+        <section id="games" className="section section--alt">
+          <div className="section__container">
+            <h2 className="section__title">Game Stats</h2>
+            <p className="section__subtitle">My gaming profiles and achievements</p>
+            <div className="games-grid">
+              <SteamStats />
+              <FFXIVStats />
+              <WoWStats />
+              <POE2Stats />
+              <NikkeStats />
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+export default App

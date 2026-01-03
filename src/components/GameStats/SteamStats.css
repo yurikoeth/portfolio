@@ -1,0 +1,538 @@
+/* SteamStats Component Styles - Dark Theme */
+
+.steam-stats {
+  --steam-bg: #000000;
+  --steam-bg-secondary: #000000;
+  --steam-bg-tertiary: #0a0a0a;
+  --steam-accent: #66c0f4;
+  --steam-accent-hover: #8ed0f8;
+  --steam-text: #c7d5e0;
+  --steam-text-secondary: #8f98a0;
+  --steam-text-bright: #ffffff;
+  --steam-success: #5ba32b;
+  --steam-warning: #ffc82c;
+  --steam-error: #cd5444;
+  --steam-border: #1a1a1a;
+  --steam-card-bg: rgba(10, 10, 10, 0.8);
+  --steam-gradient: #000000;
+  --steam-radius: 8px;
+  --steam-radius-lg: 12px;
+  --steam-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --steam-transition: all 0.2s ease;
+
+  background: var(--steam-gradient);
+  border-radius: var(--steam-radius-lg);
+  border: 1px solid #1a1a1a;
+  padding: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  color: var(--steam-text);
+  box-shadow: var(--steam-shadow);
+}
+
+/* Notice Banner */
+.steam-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: rgba(255, 200, 44, 0.1);
+  border: 1px solid rgba(255, 200, 44, 0.3);
+  border-radius: var(--steam-radius);
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--steam-warning);
+}
+
+.steam-notice__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: var(--steam-warning);
+  color: var(--steam-bg);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* Header Section */
+.steam-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--steam-border);
+}
+
+.steam-header__avatar-link {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+}
+
+.steam-header__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--steam-radius);
+  border: 2px solid var(--steam-accent);
+  transition: var(--steam-transition);
+}
+
+.steam-header__avatar-link:hover .steam-header__avatar {
+  border-color: var(--steam-accent-hover);
+  transform: scale(1.02);
+}
+
+.steam-header__status {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--steam-bg);
+}
+
+.steam-header__status--online {
+  background: var(--steam-success);
+}
+
+.steam-header__status--offline {
+  background: var(--steam-text-secondary);
+}
+
+.steam-header__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.steam-header__name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.steam-logo {
+  width: 24px;
+  height: 24px;
+  color: var(--steam-accent);
+}
+
+.steam-header__name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--steam-text-bright);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.steam-header__level {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.625rem;
+  background: var(--steam-accent);
+  color: var(--steam-bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.steam-header__status-text {
+  margin: 0.375rem 0 0 0;
+  font-size: 0.875rem;
+  color: var(--steam-text-secondary);
+}
+
+/* Stats Grid */
+.steam-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem;
+  background: var(--steam-card-bg);
+  border-radius: var(--steam-radius);
+  border: 1px solid var(--steam-border);
+  transition: var(--steam-transition);
+}
+
+.stat-card:hover {
+  background: rgba(42, 71, 94, 0.8);
+  transform: translateY(-2px);
+}
+
+.stat-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: rgba(102, 192, 244, 0.15);
+  border-radius: var(--steam-radius);
+  color: var(--steam-accent);
+}
+
+.stat-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.stat-card__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.stat-card__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--steam-text-bright);
+  line-height: 1.2;
+}
+
+.stat-card__label {
+  font-size: 0.75rem;
+  color: var(--steam-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-card__subvalue {
+  font-size: 0.75rem;
+  color: var(--steam-text-secondary);
+  margin-top: 0.125rem;
+}
+
+/* Games Section */
+.steam-games-section {
+  margin-bottom: 1.5rem;
+}
+
+.steam-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--steam-text-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--steam-accent);
+}
+
+.steam-games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Game Card */
+.game-card {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--steam-card-bg);
+  border-radius: var(--steam-radius);
+  border: 1px solid var(--steam-border);
+  transition: var(--steam-transition);
+  overflow: hidden;
+}
+
+.game-card:hover {
+  background: rgba(42, 71, 94, 0.8);
+  border-color: var(--steam-accent);
+  transform: translateX(4px);
+}
+
+.game-card__image-container {
+  width: 120px;
+  min-width: 120px;
+  height: 45px;
+  border-radius: calc(var(--steam-radius) / 2);
+  overflow: hidden;
+  background: var(--steam-bg-tertiary);
+}
+
+.game-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--steam-transition);
+}
+
+.game-card:hover .game-card__image {
+  transform: scale(1.05);
+}
+
+.game-card__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-card__title {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--steam-text-bright);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+}
+
+.game-card__playtime {
+  color: var(--steam-text-secondary);
+}
+
+.game-card__recent {
+  color: var(--steam-accent);
+  font-weight: 500;
+}
+
+/* Footer */
+.steam-footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--steam-border);
+}
+
+.steam-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--steam-accent);
+  color: var(--steam-bg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--steam-radius);
+  transition: var(--steam-transition);
+}
+
+.steam-profile-link:hover {
+  background: var(--steam-accent-hover);
+  transform: translateY(-2px);
+}
+
+.steam-profile-link .steam-logo {
+  width: 20px;
+  height: 20px;
+  color: inherit;
+}
+
+.external-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 0.25rem;
+  opacity: 0.8;
+}
+
+/* Loading State */
+.steam-stats--loading {
+  min-height: 400px;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--steam-bg-tertiary) 25%,
+    rgba(102, 192, 244, 0.1) 50%,
+    var(--steam-bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite ease-in-out;
+  border-radius: var(--steam-radius);
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton--circle {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--steam-radius);
+}
+
+.skeleton-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton--text {
+  height: 1rem;
+}
+
+.skeleton--text-lg {
+  width: 60%;
+  height: 1.5rem;
+}
+
+.skeleton--text-md {
+  width: 40%;
+  height: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton--text-sm {
+  width: 30%;
+}
+
+.skeleton--card {
+  height: 100px;
+}
+
+.skeleton--game-card {
+  height: 60px;
+  margin-bottom: 0.75rem;
+}
+
+/* Error State */
+.steam-stats--error {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-content .steam-logo {
+  width: 48px;
+  height: 48px;
+  color: var(--steam-error);
+  margin-bottom: 1rem;
+}
+
+.error-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: var(--steam-text-bright);
+}
+
+.error-content p {
+  margin: 0 0 1.5rem 0;
+  color: var(--steam-text-secondary);
+}
+
+.retry-button {
+  padding: 0.75rem 1.5rem;
+  background: var(--steam-accent);
+  color: var(--steam-bg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--steam-radius);
+  cursor: pointer;
+  transition: var(--steam-transition);
+}
+
+.retry-button:hover {
+  background: var(--steam-accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .steam-stats {
+    padding: 1rem;
+  }
+
+  .steam-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .steam-header__name-row {
+    justify-content: center;
+  }
+
+  .steam-header__avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .steam-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.875rem;
+  }
+
+  .stat-card__value {
+    font-size: 1.25rem;
+  }
+
+  .game-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .game-card__image-container {
+    width: 100%;
+    height: 80px;
+  }
+
+  .steam-profile-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .steam-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    flex-direction: row;
+    text-align: left;
+  }
+}
